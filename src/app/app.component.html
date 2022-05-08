@@ -1,0 +1,72 @@
+<H2>Enter Donor Id to get the details of all donations with donor details</H2>
+
+<div class="row">
+  <div class="column" style="height: auto;">
+    <div class="container">
+      <input type="text" [(ngModel)]="donorId" placeholder="enter donor id here">
+
+      <input type="button" class="button" (click)="getDonations()" value="Get Details">
+      
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="container">
+      <label for="donorName">First Name</label>
+      <input type="text" [(ngModel)]="donor.donorName" id="donorName"  placeholder="donorName" readonly>
+
+      <label for="username">Username</label>
+      <input type="text" [(ngModel)]="donor.username" id="username"  placeholder="username" readonly>    </div>
+  </div>
+
+  <div class="column">
+    <div class="container">
+      <label for="email">Email</label>
+      <input type="text" [(ngModel)]="donor.email" id="email"  placeholder="email" readonly>
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text"  [(ngModel)]="donor.phoneNumber" id="phoneNumber"  placeholder="phoneNumber" readonly>    </div>
+  </div>
+
+  <div class="column">
+    <div class="container">
+      <label for="address">Address</label>
+      <input type="text" [(ngModel)]="donor.address" id="address"  placeholder="address" readonly>
+      <label for="ngoId">NGO ID</label>
+      <input type="text"  [(ngModel)]="donor.ngoId" id="ngoId"  placeholder="ngoId" readonly>    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="container">
+    <h2>Donations Details</h2>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Donor Id</th>
+            <th scope="col">NGO Id</th>
+            <th scope="col">Donation Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Donation Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let donation of donations">
+           
+            <td>{{ donation.donorId }}</td>
+            <td>{{ donation.ngoId }}</td>
+            <td>{{ donation.donationType }}</td>
+            <td>{{ donation.amount }}</td>
+            <td>{{ donation.donationDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    
+  </div>
+</div>
+
